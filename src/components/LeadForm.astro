@@ -1,10 +1,13 @@
 ---
-// Formulario de captura. Envía a un webhook de n8n definido en
-// PUBLIC_N8N_WEBHOOK_URL (ver .env.example). Sin webhook configurado,
-// informa al visitante en lugar de fallar en silencio.
+// Formulario de captura con dos backends posibles (ver .env.example):
+// 1. PUBLIC_N8N_WEBHOOK_URL — webhook de n8n (cuando exista una instancia).
+// 2. PUBLIC_WEB3FORMS_KEY — Web3Forms: entrega los leads por correo, sin
+//    servidor propio. La clave es pública por diseño (así funciona el servicio).
+// Sin ninguna configurada, informa al visitante en lugar de fallar en silencio.
 ---
 
 <form id="lead-form" class="flex flex-col gap-4" novalidate>
+  <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" aria-hidden="true" />
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     <label class="flex flex-col gap-1.5">
       <span class="text-sm font-semibold">Nombre *</span>
@@ -67,29 +70,56 @@
   const form = document.getElementById('lead-form') as HTMLFormElement;
   const status = document.getElementById('form-status') as HTMLParagraphElement;
   const button = form.querySelector('button') as HTMLButtonElement;
-  const webhookUrl = import.meta.env.PUBLIC_N8N_WEBHOOK_URL;
+  const n8nUrl = import.meta.env.PUBLIC_N8N_WEBHOOK_URL;
+  const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
 
-    if (!webhookUrl) {
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    // Honeypot: los bots marcan el checkbox oculto; fingimos éxito y descartamos.
+    if (data.botcheck) {
+      form.reset();
+      status.textContent = 'Recibido. Te contactamos en menos de 24 horas hábiles.';
+      return;
+    }
+    delete data.botcheck;
+
+    if (!n8nUrl && !web3formsKey) {
       status.textContent =
         'El formulario aún no está conectado. Escríbenos por correo mientras lo activamos.';
       return;
     }
 
-    const data = Object.fromEntries(new FormData(form).entries());
     button.disabled = true;
     status.textContent = 'Enviando…';
 
     try {
-      const res = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, origen: 'web', pagina: location.pathname }),
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (n8nUrl) {
+        const res = await fetch(n8nUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, origen: 'web', pagina: location.pathname }),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      } else {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: web3formsKey,
+            subject: `Nuevo lead: ${data.nombre} — ImagineLabs`,
+            from_name: 'Web ImagineLabs',
+            email: data.correo,
+            ...data,
+            pagina: location.pathname,
+          }),
+        });
+        const out = await res.json();
+        if (!out.success) throw new Error('web3forms');
+      }
       form.reset();
       status.textContent = 'Recibido. Te contactamos en menos de 24 horas hábiles.';
     } catch {
