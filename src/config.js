@@ -2,7 +2,7 @@
 // marcador pendiente: al definir nombre, dominio y contacto se cambia aquí
 // una sola vez y se propaga a todo el sitio (SEO incluido).
 export const SITE = {
-  brand: '[TU MARCA]',
+  brand: 'ImagineLabs',
   // TODO: dominio real (usado por sitemap, canonical y JSON-LD)
   url: 'https://www.tudominio.com',
   email: 'hola@tudominio.com',

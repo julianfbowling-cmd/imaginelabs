@@ -1,6 +1,6 @@
-# marca-web
+# ImagineLabs
 
-Sitio web de la marca (nombre pendiente) — identidad **Azul profundo**.
+Sitio web de ImagineLabs — identidad **Azul profundo**.
 Stack: [Astro](https://astro.build) + Tailwind CSS 4, desplegable en Vercel o Cloudflare Pages.
 
 ## Comandos
