@@ -1,0 +1,49 @@
+---
+// Visual de IA/agentes: orbe con degradado de marca, anillos orbitales con
+// nodos en rotación lenta y chips de integraciones. Vectorial, sin imágenes.
+// Las animaciones respetan prefers-reduced-motion.
+---
+
+<div class="relative flex h-[380px] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-3xl bg-[radial-gradient(ellipse_at_center,#16277E_0%,#0C1650_58%,#0A1236_100%)] sm:h-[440px]">
+  <svg viewBox="0 0 520 440" class="absolute inset-0 h-full w-full" aria-hidden="true">
+    <circle cx="260" cy="220" r="150" stroke="#2A3F9E" stroke-width="1" fill="none" opacity="0.55"></circle>
+    <circle cx="260" cy="220" r="195" stroke="#22347F" stroke-width="1" fill="none" opacity="0.4"></circle>
+  </svg>
+
+  <div class="absolute inset-0 animate-[spin_44s_linear_infinite] motion-reduce:animate-none" aria-hidden="true">
+    <svg viewBox="0 0 520 440" class="h-full w-full">
+      <circle cx="260" cy="220" r="105" stroke="#3A54C0" stroke-width="1" stroke-dasharray="3 7" fill="none" opacity="0.7"></circle>
+      <circle cx="365" cy="220" r="5" fill="#6FE3F4"></circle>
+      <circle cx="260" cy="115" r="4" fill="#8F8DF8"></circle>
+      <circle cx="186" cy="294" r="3.5" fill="#6FE3F4" opacity="0.8"></circle>
+    </svg>
+  </div>
+
+  <div class="absolute inset-0 animate-[spin_70s_linear_infinite_reverse] motion-reduce:animate-none" aria-hidden="true">
+    <svg viewBox="0 0 520 440" class="h-full w-full">
+      <circle cx="410" cy="220" r="4.5" fill="#8F8DF8"></circle>
+      <circle cx="154" cy="114" r="3.5" fill="#6FE3F4" opacity="0.85"></circle>
+    </svg>
+  </div>
+
+  <div class="absolute h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(111,227,244,0.32),rgba(143,141,248,0.16),transparent_70%)] blur-2xl" aria-hidden="true"></div>
+
+  <div class="relative h-36 w-36 animate-[pulse_5s_ease-in-out_infinite] rounded-full bg-[radial-gradient(circle_at_35%_30%,#B9F1FA,#6FE3F4_38%,#8F8DF8_78%,#4B44C9)] shadow-[0_0_90px_rgba(111,227,244,0.45)] motion-reduce:animate-none sm:h-40 sm:w-40" aria-hidden="true">
+    <div class="absolute inset-[7px] rounded-full border border-white/25"></div>
+  </div>
+
+  <div class="bg-cardnavy/90 border-cardnavyline absolute top-7 right-7 flex items-center gap-2 rounded-full border px-4 py-2 backdrop-blur">
+    <span class="bg-cyan inline-block h-2 w-2 rounded-full"></span>
+    <span class="text-[12.5px] font-bold text-white">WhatsApp conectado</span>
+  </div>
+  <div class="bg-cardnavy/90 border-cardnavyline absolute bottom-16 left-7 flex items-center gap-2 rounded-full border px-4 py-2 backdrop-blur">
+    <span class="bg-peri inline-block h-2 w-2 rounded-full"></span>
+    <span class="text-[12.5px] font-bold text-white">CRM sincronizado</span>
+  </div>
+  <div class="bg-cardnavy/90 border-cardnavyline absolute right-9 bottom-9 flex items-center gap-2 rounded-full border px-4 py-2 backdrop-blur">
+    <span class="bg-cyan inline-block h-2 w-2 rounded-full"></span>
+    <span class="text-[12.5px] font-bold text-white">Flujo n8n activo</span>
+  </div>
+
+  <span class="text-textblue absolute bottom-5 left-1/2 -translate-x-1/2 font-mono text-[11px] tracking-[0.14em] uppercase">Agente · en línea</span>
+</div>

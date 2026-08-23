@@ -6,6 +6,7 @@ import Icon from '../components/Icon.astro';
 import HeroVisual from '../components/HeroVisual.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ProcessStory from '../components/ProcessStory.astro';
+import AgentOrb from '../components/AgentOrb.astro';
 import { SERVICES, TECH } from '../config.js';
 
 const guarantees = [
@@ -125,21 +126,7 @@ const stack = Object.values(TECH);
   <section id="por-que" class="scroll-mt-20 bg-white px-6 py-20 lg:px-10 lg:py-24">
     <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-18">
       <div class="order-2 flex justify-center lg:order-1">
-        <div class="flex h-[380px] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[52%_48%_45%_55%/48%_55%_45%_52%] bg-[linear-gradient(150deg,#0F1D66,#1B32A8)] sm:h-[440px]">
-          <div class="bg-cardnavy border-cardnavyline flex w-[330px] max-w-[86%] flex-col gap-3.5 rounded-2xl border p-5 font-mono text-[12.5px] shadow-[0_24px_60px_rgba(5,10,40,0.5)]">
-            <div class="border-b border-[#22347F] pb-3">
-              <div class="flex items-center justify-between">
-                <span class="text-[#8DA0E8]">agente · flujo-leads</span>
-                <span class="bg-cyan inline-block h-2 w-2 rounded-full"></span>
-              </div>
-            </div>
-            <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[#D5DDFA]">Lead recibido · formulario</span></div>
-            <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[#D5DDFA]">Intención alta (0,92)</span></div>
-            <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[#D5DDFA]">WhatsApp enviado · 38 s</span></div>
-            <div class="flex items-center gap-2.5"><span class="inline-block h-[7px] w-[7px] rounded-full bg-[#556AC9]"></span><span class="text-[#8DA0E8]">CRM actualizado</span></div>
-            <span class="text-[10.5px] text-[#7D8FD9]">simulación de ejemplo</span>
-          </div>
-        </div>
+        <AgentOrb />
       </div>
       <div class="order-1 flex flex-col items-start gap-5 lg:order-2">
         <span class="eyebrow text-action">Por qué nosotros</span>
