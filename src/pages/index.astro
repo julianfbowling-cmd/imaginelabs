@@ -6,15 +6,7 @@ import Icon from '../components/Icon.astro';
 import HeroVisual from '../components/HeroVisual.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ProcessStory from '../components/ProcessStory.astro';
-import AgentOrb from '../components/AgentOrb.astro';
 import { SERVICES, TECH } from '../config.js';
-
-const guarantees = [
-  'Diagnóstico gratuito de 30 minutos',
-  'Propuesta con inversión fija en 24 h hábiles',
-  'KPIs y medición desde el día uno',
-  'Acompañamiento después del lanzamiento',
-];
 
 const stack = Object.values(TECH);
 
@@ -163,34 +155,6 @@ const disciplines = [
             </article>
           ))
         }
-      </div>
-    </div>
-  </section>
-
-  <section id="por-que" class="scroll-mt-20 bg-white px-6 py-20 lg:px-10 lg:py-24">
-    <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-18">
-      <div class="order-2 flex justify-center lg:order-1">
-        <AgentOrb />
-      </div>
-      <div class="order-1 flex flex-col items-start gap-5 lg:order-2">
-        <span class="eyebrow text-action">Por qué nosotros</span>
-        <h2 class="font-display text-3xl font-bold tracking-tight text-balance lg:text-[38px]">
-          Menos trabajo manual, más ventas.
-        </h2>
-        <p class="text-inksoft max-w-[54ch] leading-relaxed">
-          No vendemos horas ni promesas: definimos contigo qué automatizar, cuánto cuesta y cómo se va
-          a medir — antes de escribir una línea de código.
-        </p>
-        <ul class="flex flex-col gap-3.5">
-          {
-            guarantees.map((item) => (
-              <li class="flex items-center gap-3">
-                <Icon name="check" size={20} class="text-action shrink-0" />
-                <span class="font-semibold">{item}</span>
-              </li>
-            ))
-          }
-        </ul>
       </div>
     </div>
   </section>
