@@ -18,9 +18,10 @@ Todo lo pendiente está centralizado:
 1. **`src/config.js`** — nombre, dominio, correo, WhatsApp, ciudad y textos de servicios.
 2. **`public/robots.txt`** — URL del sitemap con el dominio real.
 3. **`.env`** — copiar `.env.example`. El formulario usa el primer backend configurado:
-   `PUBLIC_N8N_WEBHOOK_URL` (webhook de n8n, tiene prioridad) o `PUBLIC_WEB3FORMS_KEY`
-   (Web3Forms: gratis, entrega los leads por correo — clave en https://web3forms.com).
-   Sin ninguno, el formulario avisa que no está conectado.
+   webhook de n8n (`PUBLIC_N8N_WEBHOOK_URL`, prioridad), **Supabase**
+   (`PUBLIC_SUPABASE_URL` + `PUBLIC_SUPABASE_ANON_KEY`, tabla creada con
+   `supabase/leads.sql`) o Web3Forms (`PUBLIC_WEB3FORMS_KEY`). Sin ninguno,
+   el formulario avisa que no está conectado.
 
 ## Diseño
 

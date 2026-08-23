@@ -1,9 +1,10 @@
 ---
-// Formulario de captura con dos backends posibles (ver .env.example):
+// Formulario de captura. Usa el primer backend configurado (ver .env.example):
 // 1. PUBLIC_N8N_WEBHOOK_URL — webhook de n8n (cuando exista una instancia).
-// 2. PUBLIC_WEB3FORMS_KEY — Web3Forms: entrega los leads por correo, sin
-//    servidor propio. La clave es pública por diseño (así funciona el servicio).
-// Sin ninguna configurada, informa al visitante en lugar de fallar en silencio.
+// 2. PUBLIC_SUPABASE_URL + PUBLIC_SUPABASE_ANON_KEY — inserta en la tabla
+//    public.leads (ver supabase/leads.sql; la anon key solo puede insertar).
+// 3. PUBLIC_WEB3FORMS_KEY — Web3Forms: entrega los leads por correo.
+// Sin ninguno configurado, informa al visitante en lugar de fallar en silencio.
 ---
 
 <form id="lead-form" class="flex flex-col gap-4" novalidate>
@@ -71,6 +72,8 @@
   const status = document.getElementById('form-status') as HTMLParagraphElement;
   const button = form.querySelector('button') as HTMLButtonElement;
   const n8nUrl = import.meta.env.PUBLIC_N8N_WEBHOOK_URL;
+  const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+  const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
   const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY;
 
   form.addEventListener('submit', async (event) => {
@@ -87,7 +90,7 @@
     }
     delete data.botcheck;
 
-    if (!n8nUrl && !web3formsKey) {
+    if (!n8nUrl && !(supabaseUrl && supabaseKey) && !web3formsKey) {
       status.textContent =
         'El formulario aún no está conectado. Escríbenos por correo mientras lo activamos.';
       return;
@@ -102,6 +105,26 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...data, origen: 'web', pagina: location.pathname }),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      } else if (supabaseUrl && supabaseKey) {
+        const res = await fetch(`${supabaseUrl}/rest/v1/leads`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: supabaseKey,
+            Authorization: `Bearer ${supabaseKey}`,
+            Prefer: 'return=minimal',
+          },
+          body: JSON.stringify({
+            nombre: data.nombre,
+            correo: data.correo,
+            whatsapp: data.whatsapp || null,
+            empresa: data.empresa || null,
+            mensaje: data.mensaje,
+            pagina: location.pathname,
+            origen: 'web',
+          }),
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
       } else {
