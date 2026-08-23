@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: actualizar con el dominio real
+Sitemap: https://www.tudominio.com/sitemap-index.xml

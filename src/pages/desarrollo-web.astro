@@ -1,0 +1,300 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import LeadForm from '../components/LeadForm.astro';
+import StoryTimeline from '../components/StoryTimeline.astro';
+import TechStrip from '../components/TechStrip.astro';
+---
+
+<Base
+  title="Desarrollo Web y Soluciones a la Medida"
+  description="Sitios corporativos, landing pages y aplicaciones web a la medida: portales, dashboards e integraciones con tus sistemas, con SEO técnico y velocidad desde el primer día."
+  path="/desarrollo-web/"
+>
+  <Nav />
+
+  <section class="relative overflow-hidden bg-[linear-gradient(155deg,#0C1650_0%,#142878_52%,#0A1240_100%)] text-white">
+    <div class="absolute top-24 -right-16 h-[420px] w-[420px] rounded-full bg-[rgba(111,227,244,0.14)] blur-[90px]" aria-hidden="true"></div>
+    <div class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-20">
+      <div class="flex flex-col items-start gap-7">
+        <span class="eyebrow border-cardnavyline text-textblue max-w-full rounded-full border bg-[rgba(20,34,110,0.5)] px-4 py-1.5 text-center">
+          Servicio · Desarrollo web
+        </span>
+        <h1 class="font-display text-[38px] leading-[1.08] font-extrabold tracking-tight text-balance sm:text-[48px] lg:text-[54px]">
+          Sitios que venden,
+          <span class="bg-gradient-to-r from-cyan to-peri bg-clip-text text-transparent">software a tu medida</span>.
+        </h1>
+        <p class="text-textsoft max-w-[52ch] text-lg leading-relaxed">
+          Desde el sitio corporativo que posiciona en Google hasta aplicaciones web, portales y
+          dashboards integrados con tus sistemas — rápidos, medibles y hechos para crecer contigo.
+        </p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#contacto" class="bg-cyan text-oncyan rounded-full px-8 py-4 font-extrabold transition hover:brightness-105">
+            Agendar diagnóstico gratuito
+          </a>
+          <a href="/#servicios" class="rounded-full border-[1.5px] border-[#33489F] px-8 py-4 font-bold text-white transition hover:border-[#4a5fc0]">
+            Ver todos los servicios
+          </a>
+        </div>
+        <span class="text-textblue font-mono text-[12.5px]">Auditoría gratuita de tu sitio actual, si ya tienes uno.</span>
+      </div>
+
+      <div class="relative hidden w-[460px] justify-self-end pb-8 lg:block">
+        <div class="border-cardnavyline overflow-hidden rounded-2xl border bg-[#0D1A5E] shadow-[0_24px_60px_rgba(5,10,40,0.55)]">
+          <div class="flex items-center gap-3 border-b border-[#22347F] px-4 py-2.5">
+            <div class="flex gap-1.5">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#24357F]"></span>
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#24357F]"></span>
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#24357F]"></span>
+            </div>
+            <div class="flex flex-1 justify-center">
+              <span class="rounded-full bg-[#0A1236] px-4 py-1 font-mono text-[10.5px] text-[#8DA0E8]">tudominio.com</span>
+            </div>
+            <span class="w-[54px]"></span>
+          </div>
+          <div class="bg-[linear-gradient(150deg,#0C1650,#142878)] px-5 pt-4 pb-5">
+            <div class="mb-4 flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <span class="bg-cyan inline-block h-2 w-2 rounded-full"></span>
+                <span class="inline-block h-1.5 w-10 rounded-full bg-white/60"></span>
+              </div>
+              <div class="flex gap-2">
+                <span class="inline-block h-1.5 w-6 rounded-full bg-white/30"></span>
+                <span class="inline-block h-1.5 w-6 rounded-full bg-white/30"></span>
+                <span class="inline-block h-1.5 w-6 rounded-full bg-white/30"></span>
+              </div>
+            </div>
+            <div class="mb-2 h-3 w-3/4 rounded-full bg-white/85"></div>
+            <div class="flex gap-2">
+              <div class="from-cyan to-peri h-3 w-[30%] rounded-full bg-gradient-to-r"></div>
+              <div class="h-3 w-1/4 rounded-full bg-white/85"></div>
+            </div>
+            <div class="mt-3 h-1.5 w-[85%] rounded-full bg-white/30"></div>
+            <div class="mt-1.5 h-1.5 w-[65%] rounded-full bg-white/30"></div>
+            <div class="bg-cyan mt-4 h-6 w-24 rounded-full"></div>
+          </div>
+          <div class="bg-surface grid grid-cols-3 gap-2.5 p-4">
+            <div class="border-cardline rounded-lg border bg-white p-2.5">
+              <div class="bg-chipbg mb-2 h-5 w-5 rounded-md"></div>
+              <div class="mb-1 h-1.5 w-full rounded-full bg-[#D9DFF3]"></div>
+              <div class="h-1.5 w-2/3 rounded-full bg-[#D9DFF3]"></div>
+            </div>
+            <div class="border-cardline rounded-lg border bg-white p-2.5">
+              <div class="bg-chipbg mb-2 h-5 w-5 rounded-md"></div>
+              <div class="mb-1 h-1.5 w-full rounded-full bg-[#D9DFF3]"></div>
+              <div class="h-1.5 w-2/3 rounded-full bg-[#D9DFF3]"></div>
+            </div>
+            <div class="border-cardline rounded-lg border bg-white p-2.5">
+              <div class="bg-chipbg mb-2 h-5 w-5 rounded-md"></div>
+              <div class="mb-1 h-1.5 w-full rounded-full bg-[#D9DFF3]"></div>
+              <div class="h-1.5 w-2/3 rounded-full bg-[#D9DFF3]"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-cardnavy border-cardnavyline absolute right-4 -bottom-0 flex items-center gap-3 rounded-2xl border px-4 py-3 shadow-[0_16px_40px_rgba(5,10,40,0.5)]">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="16" stroke="#22347F" stroke-width="4"></circle>
+            <circle cx="20" cy="20" r="16" stroke="#6FE3F4" stroke-width="4" stroke-linecap="round" stroke-dasharray="98.5 100.5" transform="rotate(-90 20 20)"></circle>
+            <text x="20" y="24.5" text-anchor="middle" font-size="12" font-weight="700" fill="#6FE3F4">98</text>
+          </svg>
+          <div class="flex flex-col">
+            <span class="text-[13.5px] font-bold text-white">Rendimiento</span>
+            <span class="text-textmid text-[11px]">Lighthouse · ejemplo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <TechStrip names={['react', 'angular', 'python', 'fastapi', 'aws', 'azure']} label="Construido sobre" />
+
+  <section class="bg-surface px-6 py-20 lg:px-10 lg:py-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col items-center gap-3 text-center">
+        <span class="eyebrow text-action">Qué construimos</span>
+        <h2 class="font-display max-w-[28ch] text-3xl font-bold tracking-tight text-balance lg:text-4xl">
+          Del sitio que te presenta a la aplicación que opera tu negocio.
+        </h2>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <article class="border-cardline flex flex-col items-start gap-3.5 rounded-2xl border bg-white p-7">
+          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="browser" size={26} /></span>
+          <h3 class="font-display text-xl font-bold">Sitios corporativos</h3>
+          <p class="text-inksoft leading-relaxed">Tu carta de presentación digital: clara, rápida y pensada para que quien te busca entienda en segundos qué haces y por qué elegirte.</p>
+        </article>
+        <article class="border-cardline flex flex-col items-start gap-3.5 rounded-2xl border bg-white p-7">
+          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="arrow" size={26} /></span>
+          <h3 class="font-display text-xl font-bold">Landing pages de campaña</h3>
+          <p class="text-inksoft leading-relaxed">Páginas de conversión para Google Ads y Meta Ads, con medición conectada para saber exactamente qué campaña trae clientes.</p>
+        </article>
+        <article class="border-cardline flex flex-col items-start gap-3.5 rounded-2xl border bg-white p-7">
+          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="circuit" size={26} /></span>
+          <h3 class="font-display text-xl font-bold">Aplicaciones a la medida</h3>
+          <p class="text-inksoft leading-relaxed">Portales, dashboards y herramientas internas con React o Angular y APIs en Python — integradas con tu ERP, tu CRM y tus datos.</p>
+        </article>
+        <article class="border-cardline flex flex-col items-start gap-3.5 rounded-2xl border bg-white p-7">
+          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="check" size={26} /></span>
+          <h3 class="font-display text-xl font-bold">SEO técnico y velocidad</h3>
+          <p class="text-inksoft leading-relaxed">Core Web Vitals, datos estructurados y contenido optimizado: la base para aparecer en Google — y en los buscadores con IA.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="scroll-mt-20 overflow-hidden bg-white px-6 py-20 lg:px-10 lg:py-24">
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col items-center gap-3 text-center">
+        <span class="eyebrow text-action">Cómo trabajamos</span>
+        <h2 class="font-display max-w-[26ch] text-3xl font-bold tracking-tight text-balance lg:text-4xl">
+          De invisible en Google a recibir solicitudes cada semana.
+        </h2>
+      </div>
+
+      <StoryTimeline>
+        <ol class="flex flex-col gap-16">
+          <li class="step relative grid grid-cols-1 gap-6 pl-12 lg:grid-cols-2 lg:gap-0 lg:pl-0">
+            <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
+            <div class="flex flex-col items-start gap-3 lg:items-end lg:pr-16 lg:text-right">
+              <span class="eyebrow text-action">Día 0</span>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Nos cuentas tu negocio</h3>
+              <p class="text-inksoft max-w-[46ch] leading-relaxed">
+                En 30 minutos revisamos tu presencia actual: qué encuentra un cliente cuando te
+                busca, qué tan rápido carga tu sitio y qué se está perdiendo por el camino.
+              </p>
+            </div>
+            <div class="lg:pl-16">
+              <div class="border-cardline bg-surface flex max-w-[400px] flex-col gap-3 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
+                <div class="max-w-[85%] self-start rounded-2xl rounded-bl-md bg-white px-4 py-3 text-[14.5px]">
+                  Tenemos página, pero no aparecemos en Google y nadie nos escribe por ahí…
+                </div>
+                <div class="bg-chipbg text-ink max-w-[85%] self-end rounded-2xl rounded-br-md px-4 py-3 text-[14.5px]">
+                  Agendemos 30 minutos y la revisamos juntos. ¿Mañana a las 9?
+                </div>
+                <span class="text-inksoft self-end font-mono text-[11px]">conversación de ejemplo</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="step relative grid grid-cols-1 gap-6 pl-12 lg:grid-cols-2 lg:gap-0 lg:pl-0">
+            <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
+            <div class="flex flex-col items-start gap-3 lg:order-2 lg:pl-16">
+              <span class="eyebrow text-action">Día 1</span>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Recibes tu propuesta, con precio cerrado</h3>
+              <p class="text-inksoft max-w-[46ch] leading-relaxed">
+                Estructura, contenidos, diseño y SEO — y en aplicaciones a la medida, también la
+                arquitectura y el flujo de datos de extremo a extremo. Todo por escrito, con
+                inversión fija en 24 horas hábiles.
+              </p>
+            </div>
+            <div class="lg:order-1 lg:flex lg:justify-end lg:pr-16">
+              <div class="border-cardline bg-surface flex w-full max-w-[400px] flex-col gap-3.5 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
+                <div class="border-cardline flex items-center justify-between border-b pb-3">
+                  <span class="font-display text-[15px] font-bold">Propuesta ejecutiva</span>
+                  <span class="bg-chipbg text-action rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wider uppercase">Sin sorpresas</span>
+                </div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Estructura y contenidos definidos</span></div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Diseño con tu identidad de marca</span></div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Inversión fija por escrito</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li class="step relative grid grid-cols-1 gap-6 pl-12 lg:grid-cols-2 lg:gap-0 lg:pl-0">
+            <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
+            <div class="flex flex-col items-start gap-3 lg:items-end lg:pr-16 lg:text-right">
+              <span class="eyebrow text-action">Semana a semana</span>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Tu sitio toma forma frente a tus ojos</h3>
+              <p class="text-inksoft max-w-[46ch] leading-relaxed">
+                Apruebas el diseño, ves el contenido en su lugar y probamos velocidad, SEO y — en
+                aplicaciones — cada flujo con datos reales, antes de salir al aire.
+              </p>
+            </div>
+            <div class="lg:pl-16">
+              <div class="border-cardline bg-surface flex max-w-[400px] flex-col gap-3.5 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Hito 1 · Diseño aprobado</span></div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Hito 2 · Contenido y SEO en página</span></div>
+                <div class="flex items-center gap-2.5">
+                  <span class="border-cardline h-[18px] w-[18px] shrink-0 rounded-full border-2 bg-white" aria-hidden="true"></span>
+                  <span class="text-inksoft text-[14.5px] font-semibold">Hito 3 · Pruebas de velocidad</span>
+                </div>
+                <div class="mt-1 h-2 overflow-hidden rounded-full bg-white">
+                  <div class="from-cyan to-peri h-2 w-[70%] rounded-full bg-gradient-to-r"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="step relative grid grid-cols-1 gap-6 pl-12 lg:grid-cols-2 lg:gap-0 lg:pl-0">
+            <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
+            <div class="flex flex-col items-start gap-3 lg:order-2 lg:pl-16">
+              <span class="eyebrow text-action">Desde el lanzamiento</span>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Empiezas a aparecer donde te buscan</h3>
+              <p class="text-inksoft max-w-[46ch] leading-relaxed">
+                Publicamos con SEO técnico completo, medición conectada y documentación de lo
+                construido. Cada mes ves qué posiciones ganas en Google y cuántas solicitudes
+                llegan desde tu sitio.
+              </p>
+            </div>
+            <div class="lg:order-1 lg:flex lg:justify-end lg:pr-16">
+              <div class="border-cardline bg-surface flex w-full max-w-[400px] flex-col gap-3 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
+                <div class="border-cardline flex items-center justify-between border-b pb-3">
+                  <span class="font-display text-[15px] font-bold">Panel del sitio</span>
+                  <span class="bg-chipbg text-action rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wider uppercase">ejemplo</span>
+                </div>
+                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Palabras clave en top 10</span><span class="font-display text-lg font-extrabold">6</span></div>
+                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Solicitudes del mes</span><span class="font-display text-lg font-extrabold">18</span></div>
+                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Core Web Vitals</span><span class="font-display text-action text-lg font-extrabold">Aprobado</span></div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </StoryTimeline>
+    </div>
+  </section>
+
+  <section class="bg-surface px-6 pt-20 pb-4 lg:px-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-3xl bg-[linear-gradient(150deg,#0F1D66_0%,#1B32A8_60%,#14267B_100%)] p-10 text-white lg:flex-row lg:items-center lg:p-16">
+      <div class="flex max-w-[58ch] flex-col gap-3">
+        <h2 class="font-display text-3xl font-extrabold tracking-tight text-balance lg:text-4xl">
+          Ahora mismo alguien te busca en Google.
+        </h2>
+        <p class="text-textsoft text-lg leading-relaxed">
+          La pregunta es si te encuentra a ti — o a tu competencia.
+        </p>
+      </div>
+      <div class="flex shrink-0 flex-col items-start gap-3">
+        <a href="#contacto" class="bg-cyan text-oncyan rounded-full px-8 py-4 text-center font-extrabold transition hover:brightness-105">
+          Agendar diagnóstico gratuito
+        </a>
+        <span class="text-textblue font-mono text-xs">30 minutos · sin compromiso</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="bg-surface scroll-mt-20 px-6 py-20 lg:px-10 lg:py-24">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <div class="flex flex-col items-start gap-5">
+        <span class="eyebrow text-action">Contacto</span>
+        <h2 class="font-display text-3xl font-bold tracking-tight text-balance lg:text-[38px]">
+          Hagamos que te encuentren.
+        </h2>
+        <p class="text-inksoft max-w-[50ch] leading-relaxed">
+          Cuéntanos qué hace tu negocio y te contactamos con una evaluación de tu presencia digital
+          y una propuesta de alcance en menos de 24 horas hábiles.
+        </p>
+        <ul class="flex flex-col gap-3">
+          <li class="flex items-center gap-3"><Icon name="check" size={20} class="text-action shrink-0" /><span class="font-semibold">Auditoría gratuita de tu sitio actual</span></li>
+          <li class="flex items-center gap-3"><Icon name="check" size={20} class="text-action shrink-0" /><span class="font-semibold">Sin compromiso</span></li>
+          <li class="flex items-center gap-3"><Icon name="check" size={20} class="text-action shrink-0" /><span class="font-semibold">Respuesta de un consultor, no de un bot</span></li>
+        </ul>
+      </div>
+      <div class="border-cardline rounded-3xl border bg-white p-7 lg:p-10">
+        <LeadForm />
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Base>

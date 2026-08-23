@@ -1,0 +1,63 @@
+---
+// Contenedor reutilizable de línea de tiempo narrativa: dibuja la línea con el
+// scroll y revela cada .step al entrar en pantalla. Los capítulos (<ol> con
+// <li class="step">) los aporta cada página. Respeta prefers-reduced-motion.
+---
+
+<div class="story-timeline relative mt-16">
+  <div class="bg-cardline absolute top-2 bottom-2 left-[10px] w-0.5 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></div>
+  <div
+    class="timeline-progress from-cyan to-peri absolute top-2 left-[10px] w-0.5 origin-top bg-gradient-to-b lg:left-1/2 lg:-translate-x-1/2"
+    style="height: 0%"
+    aria-hidden="true">
+  </div>
+  <slot />
+</div>
+
+<script>
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const timelines = Array.from(document.querySelectorAll('.story-timeline'));
+
+  for (const timeline of timelines) {
+    const progressLine = timeline.querySelector('.timeline-progress') as HTMLElement | null;
+    const steps = Array.from(timeline.querySelectorAll('.step'));
+
+    if (reduceMotion || !progressLine) {
+      steps.forEach((s) => s.classList.add('visible'));
+      if (progressLine) progressLine.style.height = '100%';
+      continue;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.3 }
+    );
+    steps.forEach((s) => io.observe(s));
+
+    let ticking = false;
+    const updateProgress = () => {
+      const rect = timeline.getBoundingClientRect();
+      const progress = Math.min(1, Math.max(0, (innerHeight * 0.72 - rect.top) / rect.height));
+      progressLine.style.height = `${progress * 100}%`;
+      ticking = false;
+    };
+    addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateProgress);
+        }
+      },
+      { passive: true }
+    );
+    updateProgress();
+  }
+</script>

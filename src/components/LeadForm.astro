@@ -1,0 +1,101 @@
+---
+// Formulario de captura. Envía a un webhook de n8n definido en
+// PUBLIC_N8N_WEBHOOK_URL (ver .env.example). Sin webhook configurado,
+// informa al visitante en lugar de fallar en silencio.
+---
+
+<form id="lead-form" class="flex flex-col gap-4" novalidate>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <label class="flex flex-col gap-1.5">
+      <span class="text-sm font-semibold">Nombre *</span>
+      <input
+        type="text"
+        name="nombre"
+        required
+        autocomplete="name"
+        class="border-cardline focus:border-action rounded-xl border bg-white px-4 py-3 text-[15px] outline-none"
+      />
+    </label>
+    <label class="flex flex-col gap-1.5">
+      <span class="text-sm font-semibold">Correo *</span>
+      <input
+        type="email"
+        name="correo"
+        required
+        autocomplete="email"
+        class="border-cardline focus:border-action rounded-xl border bg-white px-4 py-3 text-[15px] outline-none"
+      />
+    </label>
+    <label class="flex flex-col gap-1.5">
+      <span class="text-sm font-semibold">WhatsApp</span>
+      <input
+        type="tel"
+        name="whatsapp"
+        autocomplete="tel"
+        class="border-cardline focus:border-action rounded-xl border bg-white px-4 py-3 text-[15px] outline-none"
+      />
+    </label>
+    <label class="flex flex-col gap-1.5">
+      <span class="text-sm font-semibold">Empresa</span>
+      <input
+        type="text"
+        name="empresa"
+        autocomplete="organization"
+        class="border-cardline focus:border-action rounded-xl border bg-white px-4 py-3 text-[15px] outline-none"
+      />
+    </label>
+  </div>
+  <label class="flex flex-col gap-1.5">
+    <span class="text-sm font-semibold">¿Qué quieres lograr? *</span>
+    <textarea
+      name="mensaje"
+      required
+      rows="4"
+      class="border-cardline focus:border-action resize-y rounded-xl border bg-white px-4 py-3 text-[15px] outline-none"
+      placeholder="Cuéntanos tu objetivo comercial: qué vendes, qué te quita tiempo, qué quieres automatizar."></textarea>
+  </label>
+  <button
+    type="submit"
+    class="bg-cyan text-oncyan self-start rounded-full px-8 py-4 font-extrabold transition hover:brightness-105 disabled:opacity-60"
+  >
+    Enviar solicitud
+  </button>
+  <p id="form-status" class="text-inksoft min-h-5 text-sm" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.getElementById('lead-form') as HTMLFormElement;
+  const status = document.getElementById('form-status') as HTMLParagraphElement;
+  const button = form.querySelector('button') as HTMLButtonElement;
+  const webhookUrl = import.meta.env.PUBLIC_N8N_WEBHOOK_URL;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    if (!webhookUrl) {
+      status.textContent =
+        'El formulario aún no está conectado. Escríbenos por correo mientras lo activamos.';
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    button.disabled = true;
+    status.textContent = 'Enviando…';
+
+    try {
+      const res = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, origen: 'web', pagina: location.pathname }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      form.reset();
+      status.textContent = 'Recibido. Te contactamos en menos de 24 horas hábiles.';
+    } catch {
+      status.textContent = 'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos por correo.';
+    } finally {
+      button.disabled = false;
+    }
+  });
+</script>

@@ -1,0 +1,30 @@
+---
+// Franja de logos de tecnología, filtrada por servicio. Uso nominativo de
+// marcas; variantes en blanco para el fondo oscuro.
+import { TECH } from '../config.js';
+
+const { names = [], label = 'Trabajamos con' } = Astro.props;
+const techs = names.map((n) => TECH[n]).filter(Boolean);
+---
+
+<section class="bg-deep px-6 py-10 lg:px-10">
+  <div class="mx-auto flex max-w-7xl flex-col gap-5">
+    <span class="eyebrow text-textdim text-center tracking-[0.16em]">{label}</span>
+    <ul class="flex flex-wrap items-stretch justify-center gap-4">
+      {
+        techs.map((tech) => (
+          <li class="border-navline flex items-center gap-2.5 rounded-xl border px-6 py-3">
+            {tech.wordmark ? (
+              <img src={tech.logo} alt={tech.name} class={tech.imgClass} loading="lazy" />
+            ) : (
+              <>
+                <img src={tech.logo} alt="" class={tech.iconClass ?? 'h-6 w-auto'} loading="lazy" />
+                <span class="text-textmid font-extrabold">{tech.name}</span>
+              </>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

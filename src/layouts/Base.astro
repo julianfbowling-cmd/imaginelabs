@@ -1,0 +1,68 @@
+---
+import { SITE } from '../config.js';
+import '../styles/global.css';
+
+const { title = SITE.titleDefault, description = SITE.description, path = '/' } = Astro.props;
+const fullTitle = `${title} | ${SITE.brand}`;
+const canonical = new URL(path, SITE.url).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.brand,
+      url: SITE.url,
+      email: SITE.email,
+      description: SITE.description,
+      address: { '@type': 'PostalAddress', addressCountry: 'CO' },
+      areaServed: 'Worldwide',
+      knowsAbout: [
+        'Desarrollo web',
+        'Inteligencia artificial',
+        'Automatización empresarial',
+        'Ecommerce',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.brand,
+      inLanguage: 'es',
+      publisher: { '@id': `${SITE.url}/#organization` },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a1236" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.brand} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="es_CO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

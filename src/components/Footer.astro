@@ -1,0 +1,52 @@
+---
+import { SITE, SERVICES } from '../config.js';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-deep px-6 pt-16 text-white lg:px-10">
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 pb-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+    <div class="flex flex-col items-start gap-4">
+      <a href="/" class="flex items-center gap-3">
+        <Icon name="circuit" size={24} class="text-cyan" />
+        <span class="font-display text-lg font-bold">{SITE.brand}</span>
+      </a>
+      <p class="text-textdim max-w-[34ch] text-sm leading-relaxed">
+        Web, IA y automatización para empresas que quieren crecer con resultados medibles.
+      </p>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="eyebrow text-textdim">Servicios</span>
+      {
+        SERVICES.map((s) => (
+          <a href={s.href ?? '/#servicios'} class="text-textmid text-sm transition-colors hover:text-white">
+            {s.title}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="eyebrow text-textdim">Compañía</span>
+      <a href="/#proceso" class="text-textmid text-sm transition-colors hover:text-white">Cómo trabajamos</a>
+      <a href="/#por-que" class="text-textmid text-sm transition-colors hover:text-white">Por qué nosotros</a>
+      <a href="#contacto" class="text-textmid text-sm transition-colors hover:text-white">Contacto</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="eyebrow text-textdim">Contacto</span>
+      <a href={`mailto:${SITE.email}`} class="text-textmid text-sm transition-colors hover:text-white">{SITE.email}</a>
+      {
+        SITE.whatsapp && (
+          <a href={`https://wa.me/${SITE.whatsapp}`} rel="noopener noreferrer" target="_blank" class="text-textmid text-sm transition-colors hover:text-white">
+            WhatsApp
+          </a>
+        )
+      }
+      <span class="text-textmid text-sm">{SITE.city}</span>
+    </div>
+  </div>
+  <div class="border-navline mx-auto flex max-w-7xl flex-col gap-2 border-t py-6 sm:flex-row sm:items-center sm:justify-between">
+    <span class="text-textdim text-xs">© {year} {SITE.brand} · Todos los derechos reservados.</span>
+    <span class="text-textdim text-xs">Privacidad · Términos · Cookies</span>
+  </div>
+</footer>

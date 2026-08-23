@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+
+/* Paleta "Azul profundo" — ver tablero Paleta final en el lienzo de diseño */
+@theme {
+  --color-deep: #0a1236;
+  --color-royal: #142878;
+  --color-royal-2: #1b32a8;
+  --color-royal-3: #0f1d66;
+  --color-action: #2440d6;
+  --color-cyan: #6fe3f4;
+  --color-peri: #8f8df8;
+  --color-oncyan: #071445;
+  --color-surface: #f5f7fe;
+  --color-ink: #0d1440;
+  --color-inksoft: #4a5578;
+  --color-cardline: #e1e7f8;
+  --color-chipbg: #e7ebfc;
+  --color-navline: #1e2a6e;
+  --color-cardnavy: #0d1a5e;
+  --color-cardnavyline: #2a3f9e;
+  --color-textdim: #8a99e0;
+  --color-textmid: #aebbf0;
+  --color-textsoft: #c0cbf4;
+  --color-textblue: #9db4f5;
+
+  --font-display: 'Sora', 'Trebuchet MS', sans-serif;
+  --font-sans: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', Menlo, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-deep font-sans text-ink antialiased;
+}
+
+/* Etiquetas mono en mayúsculas, usadas en todo el sitio */
+.eyebrow {
+  @apply font-mono text-xs tracking-[0.14em] uppercase;
+}
+
+/* Línea de tiempo narrativa (ver StoryTimeline.astro) */
+.story-timeline .step {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.story-timeline .step.visible {
+  opacity: 1;
+  transform: none;
+}
+.story-timeline .dot {
+  background: #ffffff;
+  border-color: var(--color-cardline);
+  transition:
+    background 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+.story-timeline .step.visible .dot {
+  background: var(--color-cyan);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 0 5px rgba(111, 227, 244, 0.25);
+}
+.story-timeline .timeline-progress {
+  transition: height 0.15s linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-timeline .step,
+  .story-timeline .dot,
+  .story-timeline .timeline-progress {
+    transition: none;
+  }
+  .story-timeline .step {
+    opacity: 1;
+    transform: none;
+  }
+}

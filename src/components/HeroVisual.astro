@@ -1,0 +1,115 @@
+---
+// Ilustración del héroe: una página web construyéndose — ventana de navegador
+// con una mini landing, panel de código y métricas flotantes.
+// Las cifras son ilustrativas y están marcadas como ejemplo.
+---
+
+<div class="relative h-[500px] w-[560px]" aria-hidden="true">
+  <div class="border-cardnavyline absolute top-8 right-0 w-[460px] overflow-hidden rounded-2xl border bg-[#0D1A5E] shadow-[0_24px_60px_rgba(5,10,40,0.55)]">
+    <div class="flex items-center gap-3 border-b border-[#22347F] px-4 py-2.5">
+      <div class="flex gap-1.5">
+        <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#24357F]"></span>
+        <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#24357F]"></span>
+        <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#24357F]"></span>
+      </div>
+      <div class="flex flex-1 justify-center">
+        <span class="rounded-full bg-[#0A1236] px-4 py-1 font-mono text-[10.5px] text-[#8DA0E8]">tudominio.com</span>
+      </div>
+      <span class="w-[54px]"></span>
+    </div>
+    <div class="bg-[linear-gradient(150deg,#0C1650,#142878)] px-5 pt-4 pb-5">
+      <div class="mb-4 flex items-center justify-between">
+        <div class="flex items-center gap-1.5">
+          <span class="bg-cyan inline-block h-2 w-2 rounded-full"></span>
+          <span class="inline-block h-1.5 w-10 rounded-full bg-white/60"></span>
+        </div>
+        <div class="flex gap-2">
+          <span class="inline-block h-1.5 w-6 rounded-full bg-white/30"></span>
+          <span class="inline-block h-1.5 w-6 rounded-full bg-white/30"></span>
+          <span class="inline-block h-1.5 w-6 rounded-full bg-white/30"></span>
+        </div>
+      </div>
+      <div class="mb-2 h-3 w-3/4 rounded-full bg-white/85"></div>
+      <div class="flex gap-2">
+        <div class="from-cyan to-peri h-3 w-[30%] rounded-full bg-gradient-to-r"></div>
+        <div class="h-3 w-1/4 rounded-full bg-white/85"></div>
+      </div>
+      <div class="mt-3 h-1.5 w-[85%] rounded-full bg-white/30"></div>
+      <div class="mt-1.5 h-1.5 w-[65%] rounded-full bg-white/30"></div>
+      <div class="bg-cyan mt-4 h-6 w-24 rounded-full"></div>
+    </div>
+    <div class="bg-surface grid grid-cols-3 gap-2.5 p-4">
+      <div class="border-cardline rounded-lg border bg-white p-2.5">
+        <div class="bg-chipbg mb-2 h-5 w-5 rounded-md"></div>
+        <div class="mb-1 h-1.5 w-full rounded-full bg-[#D9DFF3]"></div>
+        <div class="h-1.5 w-2/3 rounded-full bg-[#D9DFF3]"></div>
+      </div>
+      <div class="border-cardline rounded-lg border bg-white p-2.5">
+        <div class="bg-chipbg mb-2 h-5 w-5 rounded-md"></div>
+        <div class="mb-1 h-1.5 w-full rounded-full bg-[#D9DFF3]"></div>
+        <div class="h-1.5 w-2/3 rounded-full bg-[#D9DFF3]"></div>
+      </div>
+      <div class="border-cardline rounded-lg border bg-white p-2.5">
+        <div class="bg-chipbg mb-2 h-5 w-5 rounded-md"></div>
+        <div class="mb-1 h-1.5 w-full rounded-full bg-[#D9DFF3]"></div>
+        <div class="h-1.5 w-2/3 rounded-full bg-[#D9DFF3]"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-cardnavyline absolute bottom-6 left-0 w-[250px] overflow-hidden rounded-2xl border bg-[#0A1236] shadow-[0_24px_60px_rgba(5,10,40,0.55)]">
+    <div class="flex items-center justify-between border-b border-[#22347F] px-3.5 py-2">
+      <span class="font-mono text-[10.5px] text-[#8DA0E8]">index.astro</span>
+      <span class="bg-cyan inline-block h-1.5 w-1.5 rounded-full"></span>
+    </div>
+    <div class="flex flex-col gap-2 p-3.5">
+      <div class="flex gap-1.5">
+        <span class="bg-peri/80 inline-block h-2 w-10 rounded-full"></span>
+        <span class="inline-block h-2 w-20 rounded-full bg-white/30"></span>
+      </div>
+      <div class="flex gap-1.5 pl-3">
+        <span class="bg-cyan/80 inline-block h-2 w-14 rounded-full"></span>
+        <span class="inline-block h-2 w-12 rounded-full bg-white/25"></span>
+      </div>
+      <div class="flex pl-6">
+        <span class="inline-block h-2 w-24 rounded-full bg-white/45"></span>
+      </div>
+      <div class="flex gap-1.5 pl-3">
+        <span class="bg-cyan/80 inline-block h-2 w-9 rounded-full"></span>
+        <span class="bg-peri/60 inline-block h-2 w-16 rounded-full"></span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="inline-block h-2 w-8 rounded-full bg-white/30"></span>
+        <span class="bg-cyan motion-reduce:animate-none inline-block h-3 w-[3px] animate-pulse"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-cardnavy border-cardnavyline absolute top-0 left-6 flex flex-col gap-1 rounded-2xl border px-4 py-3 shadow-[0_16px_40px_rgba(5,10,40,0.5)]">
+    <div class="flex items-center gap-2">
+      <span class="bg-cyan inline-block h-2 w-2 rounded-full"></span>
+      <span class="text-[13.5px] font-bold text-white">Agente IA · activo</span>
+    </div>
+    <span class="font-mono text-[11px] text-[#8DA0E8]">flujo-leads · n8n</span>
+  </div>
+
+  <div class="bg-cardnavy border-cardnavyline absolute right-2 bottom-24 flex items-center gap-3 rounded-2xl border px-4 py-3 shadow-[0_16px_40px_rgba(5,10,40,0.5)]">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="16" stroke="#22347F" stroke-width="4"></circle>
+      <circle
+        cx="20"
+        cy="20"
+        r="16"
+        stroke="#6FE3F4"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-dasharray="98.5 100.5"
+        transform="rotate(-90 20 20)"></circle>
+      <text x="20" y="24.5" text-anchor="middle" font-size="12" font-weight="700" fill="#6FE3F4">98</text>
+    </svg>
+    <div class="flex flex-col">
+      <span class="text-[13.5px] font-bold text-white">Rendimiento</span>
+      <span class="text-textmid text-[11px]">Lighthouse · ejemplo</span>
+    </div>
+  </div>
+</div>
