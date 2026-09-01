@@ -9,9 +9,9 @@ import TechStrip from '../components/TechStrip.astro';
 ---
 
 <Base
-  title="Tiendas Online y Ecommerce"
-  description="Tiendas Shopify y WooCommerce con checkout ágil, pagos locales y logística integrada, y automatizaciones que confirman, facturan y hacen seguimiento por ti."
-  path="/ecommerce/"
+  title="Inteligencia de Negocio y Analítica de Datos"
+  description="Unificamos tus datos de ventas, operación y finanzas en dashboards y reportes confiables: indicadores claros para tomar decisiones con evidencia y no con intuición."
+  path="/inteligencia-de-negocio/"
 >
   <Nav />
 
@@ -20,15 +20,15 @@ import TechStrip from '../components/TechStrip.astro';
     <div class="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-20">
       <div class="flex flex-col items-start gap-7">
         <span class="eyebrow border-cardnavyline text-textblue max-w-full rounded-full border bg-[rgba(20,34,110,0.5)] px-4 py-1.5 text-center">
-          Servicio · Ecommerce
+          Servicio · Inteligencia de negocio
         </span>
         <h1 class="font-display text-[38px] leading-[1.08] font-extrabold tracking-tight text-balance sm:text-[48px] lg:text-[54px]">
-          Una tienda que vende
-          <span class="bg-gradient-to-r from-cyan to-peri bg-clip-text text-transparent">mientras duermes</span>.
+          Decide con datos, no con
+          <span class="bg-gradient-to-r from-cyan to-peri bg-clip-text text-transparent">corazonadas</span>.
         </h1>
         <p class="text-textsoft max-w-[52ch] text-lg leading-relaxed">
-          Shopify o WooCommerce con checkout ágil, pagos locales y logística integrada, y
-          automatizaciones que confirman, facturan y hacen seguimiento por ti.
+          Unimos tu ERP, tu CRM, tu tienda y tus hojas de cálculo en una sola fuente confiable, y la
+          convertimos en dashboards y alertas que tu equipo directivo entiende y usa cada semana.
         </p>
         <div class="flex flex-wrap items-center gap-4">
           <a href="#contacto" class="bg-cyan text-oncyan rounded-full px-8 py-4 font-extrabold transition hover:brightness-105">
@@ -38,53 +38,64 @@ import TechStrip from '../components/TechStrip.astro';
             Ver todos los servicios
           </a>
         </div>
-        <span class="text-textblue font-mono text-[12.5px]">Te ayudamos a elegir la plataforma según tu presupuesto.</span>
+        <span class="text-textblue font-mono text-[12.5px]">Sabrás qué medir primero en 30 minutos.</span>
       </div>
 
       <div class="hidden justify-self-end lg:block">
-        <div class="bg-cardnavy border-cardnavyline flex w-[380px] flex-col gap-3.5 rounded-2xl border p-6 shadow-[0_24px_60px_rgba(5,10,40,0.55)]">
+        <div class="bg-cardnavy border-cardnavyline flex w-[360px] flex-col gap-4 rounded-2xl border p-6 font-mono text-[13px] shadow-[0_24px_60px_rgba(5,10,40,0.55)]">
           <div class="flex items-center justify-between border-b border-[#22347F] pb-3">
-            <span class="font-mono text-[13px] text-[#8DA0E8]">Nuevo pedido · 2:47 a. m.</span>
-            <span class="rounded-full border border-[#2A3F9E] px-3 py-1 font-mono text-[10.5px] tracking-wider text-[#8DA0E8] uppercase">ejemplo</span>
+            <span class="text-[#8DA0E8]">tablero · ventas · hoy</span>
+            <span class="bg-cyan inline-block h-2 w-2 rounded-full"></span>
           </div>
-          <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[14px] text-[#D5DDFA]">Pago aprobado</span></div>
-          <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[14px] text-[#D5DDFA]">Factura generada</span></div>
-          <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[14px] text-[#D5DDFA]">Guía de envío creada</span></div>
-          <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[14px] text-[#D5DDFA]">Cliente notificado por WhatsApp</span></div>
-          <div class="flex items-center justify-between border-t border-[#22347F] pt-3">
-            <span class="text-[14px] text-[#8DA0E8]">Total</span>
-            <span class="font-display text-cyan text-xl font-extrabold">$ 186.000</span>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-xl bg-[rgba(20,34,110,0.65)] px-3 py-2.5">
+              <span class="block text-[10.5px] text-[#7D8FD9]">Ventas mes</span>
+              <span class="font-display text-lg font-extrabold text-white">$182 M</span>
+            </div>
+            <div class="rounded-xl bg-[rgba(20,34,110,0.65)] px-3 py-2.5">
+              <span class="block text-[10.5px] text-[#7D8FD9]">Margen</span>
+              <span class="font-display text-cyan text-lg font-extrabold">31,4 %</span>
+            </div>
           </div>
+          <div class="flex h-[86px] items-end gap-2.5" aria-hidden="true">
+            <div class="from-cyan to-peri h-[38%] flex-1 rounded-t-md bg-gradient-to-t opacity-70"></div>
+            <div class="from-cyan to-peri h-[55%] flex-1 rounded-t-md bg-gradient-to-t opacity-80"></div>
+            <div class="from-cyan to-peri h-[46%] flex-1 rounded-t-md bg-gradient-to-t opacity-70"></div>
+            <div class="from-cyan to-peri h-[74%] flex-1 rounded-t-md bg-gradient-to-t opacity-90"></div>
+            <div class="from-cyan to-peri h-[92%] flex-1 rounded-t-md bg-gradient-to-t"></div>
+          </div>
+          <div class="flex items-center gap-2.5"><span class="bg-cyan inline-block h-[7px] w-[7px] rounded-full"></span><span class="text-[#D5DDFA]">Inventario bajo · 3 referencias</span></div>
+          <span class="text-[10.5px] text-[#7D8FD9]">cifras de ejemplo</span>
         </div>
       </div>
     </div>
   </section>
 
-  <TechStrip names={['shopify', 'woocommerce', 'n8n']} label="Construido sobre" />
+  <TechStrip names={['python', 'fastapi', 'aws', 'azure']} label="Construido sobre" />
 
   <section class="bg-surface px-6 py-20 lg:px-10 lg:py-24">
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col items-center gap-3 text-center">
         <span class="eyebrow text-action">Qué construimos</span>
         <h2 class="font-display max-w-[26ch] text-3xl font-bold tracking-tight text-balance lg:text-4xl">
-          Del catálogo al despacho, todo conectado.
+          Indicadores que se usan, no informes que nadie abre.
         </h2>
       </div>
       <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
         <article class="border-cardline flex flex-col items-start gap-3.5 rounded-2xl border bg-white p-7">
-          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="bag" size={26} /></span>
-          <h3 class="font-display text-xl font-bold">Tienda Shopify o WooCommerce</h3>
-          <p class="text-inksoft leading-relaxed">Elegimos contigo la plataforma según tu presupuesto y tu catálogo, y la montamos con un checkout que no espanta compradores.</p>
+          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="layers" size={26} /></span>
+          <h3 class="font-display text-xl font-bold">Tus datos en un solo lugar</h3>
+          <p class="text-inksoft leading-relaxed">Integramos ERP, CRM, tienda y hojas de cálculo en una base única, limpia y actualizada sola, sin que nadie consolide nada a mano cada mes.</p>
         </article>
         <article class="border-cardline flex flex-col items-start gap-3.5 rounded-2xl border bg-white p-7">
-          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="check" size={26} /></span>
-          <h3 class="font-display text-xl font-bold">Pagos y envíos locales</h3>
-          <p class="text-inksoft leading-relaxed">Pasarelas colombianas (Wompi, Mercado Pago, PSE), impuestos configurados y transportadoras integradas desde el día uno.</p>
+          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="chart" size={26} /></span>
+          <h3 class="font-display text-xl font-bold">Dashboards que se leen en 30 segundos</h3>
+          <p class="text-inksoft leading-relaxed">Ventas, margen, inventario y operación con la vista que necesita cada área: dirección, comercial y logística viendo los mismos números.</p>
         </article>
         <article class="border-cardline flex flex-col items-start gap-3.5 rounded-2xl border bg-white p-7">
-          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="circuit" size={26} /></span>
-          <h3 class="font-display text-xl font-bold">Automatización postventa</h3>
-          <p class="text-inksoft leading-relaxed">Confirmaciones por WhatsApp, recuperación de carritos abandonados y seguimiento de envíos, sin que nadie de tu equipo lo haga a mano.</p>
+          <span class="bg-chipbg text-action inline-flex h-13 w-13 items-center justify-center rounded-2xl"><Icon name="qa" size={26} /></span>
+          <h3 class="font-display text-xl font-bold">Reportes y alertas automáticas</h3>
+          <p class="text-inksoft leading-relaxed">El informe llega solo a tu correo o WhatsApp, y si un indicador se sale de rango te enteras ese mismo día, no al cierre del mes.</p>
         </article>
       </div>
     </div>
@@ -95,7 +106,7 @@ import TechStrip from '../components/TechStrip.astro';
       <div class="flex flex-col items-center gap-3 text-center">
         <span class="eyebrow text-action">Cómo trabajamos</span>
         <h2 class="font-display max-w-[26ch] text-3xl font-bold tracking-tight text-balance lg:text-4xl">
-          De vender por chat a una tienda que opera sola.
+          De hojas de cálculo sueltas a una sola verdad.
         </h2>
       </div>
 
@@ -105,19 +116,19 @@ import TechStrip from '../components/TechStrip.astro';
             <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
             <div class="flex flex-col items-start gap-3 lg:items-end lg:pr-16 lg:text-right">
               <span class="eyebrow text-action">Día 0</span>
-              <h3 class="font-display text-2xl font-bold tracking-tight">Nos cuentas cómo vendes hoy</h3>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Nos cuentas qué decides cada semana</h3>
               <p class="text-inksoft max-w-[46ch] leading-relaxed">
-                En 30 minutos revisamos tu catálogo, tus canales y tu operación de despacho, y
-                definimos qué plataforma y qué automatizaciones te convienen.
+                Empezamos por las decisiones, no por la herramienta. Identificamos qué preguntas te
+                cuesta responder hoy, quién las necesita y en qué sistemas viven esos datos.
               </p>
             </div>
             <div class="lg:pl-16">
               <div class="border-cardline bg-surface flex max-w-[400px] flex-col gap-3 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
                 <div class="max-w-[85%] self-start rounded-2xl rounded-bl-md bg-white px-4 py-3 text-[14.5px]">
-                  Vendo por Instagram y WhatsApp, pero anotar pedidos a mano me está costando ventas…
+                  Cierro el mes y todavía no sé qué producto me deja margen de verdad…
                 </div>
                 <div class="bg-chipbg text-ink max-w-[85%] self-end rounded-2xl rounded-br-md px-4 py-3 text-[14.5px]">
-                  Agendemos 30 minutos y revisamos tu catálogo. ¿Mañana a las 9?
+                  Agendemos 30 minutos y revisamos tus datos. ¿Mañana a las 9?
                 </div>
                 <span class="text-inksoft self-end font-mono text-[11px]">conversación de ejemplo</span>
               </div>
@@ -128,20 +139,20 @@ import TechStrip from '../components/TechStrip.astro';
             <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
             <div class="flex flex-col items-start gap-3 lg:order-2 lg:pl-16">
               <span class="eyebrow text-action">Día 1</span>
-              <h3 class="font-display text-2xl font-bold tracking-tight">Recibes el plan de tu tienda</h3>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Recibes el mapa de tus indicadores</h3>
               <p class="text-inksoft max-w-[46ch] leading-relaxed">
-                Plataforma elegida, estructura del catálogo, pagos, envíos y automatizaciones,
-                con inversión fija por escrito en 24 horas hábiles.
+                Qué fuentes conectamos, cómo se calcula cada indicador y quién ve cada tablero. Todo
+                por escrito, con definiciones acordadas y con inversión fija en 24 horas hábiles.
               </p>
             </div>
             <div class="lg:order-1 lg:flex lg:justify-end lg:pr-16">
               <div class="border-cardline bg-surface flex w-full max-w-[400px] flex-col gap-3.5 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
                 <div class="border-cardline flex items-center justify-between border-b pb-3">
-                  <span class="font-display text-[15px] font-bold">Plan de la tienda</span>
+                  <span class="font-display text-[15px] font-bold">Mapa de indicadores</span>
                   <span class="bg-chipbg text-action rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wider uppercase">Sin sorpresas</span>
                 </div>
-                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Plataforma y catálogo definidos</span></div>
-                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Pagos, envíos e impuestos resueltos</span></div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Fuentes de datos y frecuencia de carga</span></div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Definición de cada indicador, acordada</span></div>
                 <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Inversión fija por escrito</span></div>
               </div>
             </div>
@@ -151,19 +162,19 @@ import TechStrip from '../components/TechStrip.astro';
             <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
             <div class="flex flex-col items-start gap-3 lg:items-end lg:pr-16 lg:text-right">
               <span class="eyebrow text-action">Semana a semana</span>
-              <h3 class="font-display text-2xl font-bold tracking-tight">Tu catálogo cobra vida</h3>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Tus datos se vuelven confiables</h3>
               <p class="text-inksoft max-w-[46ch] leading-relaxed">
-                Diseñamos la tienda, cargamos productos y hacemos compras de prueba reales
-                (pago, factura, guía y notificación) antes de abrir las puertas.
+                Conectamos las fuentes, limpiamos lo que llega sucio y validamos cada cifra contra
+                tus cierres reales. Un tablero solo sale al aire cuando los números cuadran.
               </p>
             </div>
             <div class="lg:pl-16">
               <div class="border-cardline bg-surface flex max-w-[400px] flex-col gap-3.5 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
-                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Hito 1 · Tienda diseñada</span></div>
-                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Hito 2 · Pagos y envíos en pruebas</span></div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Hito 1 · Fuentes conectadas</span></div>
+                <div class="flex items-center gap-2.5"><Icon name="check" size={18} class="text-action shrink-0" /><span class="text-[14.5px] font-semibold">Hito 2 · Cifras validadas con tu cierre</span></div>
                 <div class="flex items-center gap-2.5">
                   <span class="border-cardline h-[18px] w-[18px] shrink-0 rounded-full border-2 bg-white" aria-hidden="true"></span>
-                  <span class="text-inksoft text-[14.5px] font-semibold">Hito 3 · Carga de productos</span>
+                  <span class="text-inksoft text-[14.5px] font-semibold">Hito 3 · Tableros por área</span>
                 </div>
                 <div class="mt-1 h-2 overflow-hidden rounded-full bg-white">
                   <div class="from-cyan to-peri h-2 w-[70%] rounded-full bg-gradient-to-r"></div>
@@ -176,22 +187,21 @@ import TechStrip from '../components/TechStrip.astro';
             <span class="dot absolute top-1.5 left-[2px] h-[18px] w-[18px] rounded-full border-2 lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></span>
             <div class="flex flex-col items-start gap-3 lg:order-2 lg:pl-16">
               <span class="eyebrow text-action">Desde el lanzamiento</span>
-              <h3 class="font-display text-2xl font-bold tracking-tight">Tu primera venta mientras dormías</h3>
+              <h3 class="font-display text-2xl font-bold tracking-tight">Tu comité decide con evidencia</h3>
               <p class="text-inksoft max-w-[46ch] leading-relaxed">
-                El pedido entra, el pago se aprueba, la guía se genera y el cliente recibe su
-                confirmación. Todo solo. Tú revisas el resumen por la mañana y nosotros seguimos
-                optimizando contigo.
+                Capacitamos a tu equipo para leer y usar los tableros, dejamos los reportes
+                programados y ajustamos los indicadores a medida que tu negocio cambia.
               </p>
             </div>
             <div class="lg:order-1 lg:flex lg:justify-end lg:pr-16">
               <div class="border-cardline bg-surface flex w-full max-w-[400px] flex-col gap-3 rounded-2xl border p-5 shadow-[0_12px_32px_rgba(13,20,64,0.06)]">
                 <div class="border-cardline flex items-center justify-between border-b pb-3">
-                  <span class="font-display text-[15px] font-bold">Resumen del mes</span>
+                  <span class="font-display text-[15px] font-bold">Reporte semanal</span>
                   <span class="bg-chipbg text-action rounded-full px-3 py-1 text-[11px] font-extrabold tracking-wider uppercase">ejemplo</span>
                 </div>
-                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Pedidos</span><span class="font-display text-lg font-extrabold">43</span></div>
-                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Ticket promedio</span><span class="font-display text-lg font-extrabold">$ 186.000</span></div>
-                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Carritos recuperados</span><span class="font-display text-action text-lg font-extrabold">9</span></div>
+                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Ventas vs. semana anterior</span><span class="font-display text-lg font-extrabold">+8,3 %</span></div>
+                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Producto con mejor margen</span><span class="font-display text-lg font-extrabold">Línea B</span></div>
+                <div class="flex items-center justify-between"><span class="text-inksoft text-[14px]">Horas de consolidación manual</span><span class="font-display text-action text-lg font-extrabold">0</span></div>
               </div>
             </div>
           </li>
@@ -204,10 +214,10 @@ import TechStrip from '../components/TechStrip.astro';
     <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-3xl bg-[linear-gradient(150deg,#0F1D66_0%,#1B32A8_60%,#14267B_100%)] p-10 text-white lg:flex-row lg:items-center lg:p-16">
       <div class="flex max-w-[58ch] flex-col gap-3">
         <h2 class="font-display text-3xl font-extrabold tracking-tight text-balance lg:text-4xl">
-          Tu tienda no cierra a las 6&nbsp;p.&nbsp;m.
+          ¿Cuánto tardas hoy en saber cómo va el mes?
         </h2>
         <p class="text-textsoft text-lg leading-relaxed">
-          Checkout listo, pagos aprobados y pedidos confirmados, a cualquier hora.
+          Con un tablero bien hecho son diez segundos, y toda tu empresa mira la misma cifra.
         </p>
       </div>
       <div class="flex shrink-0 flex-col items-start gap-3">
@@ -224,15 +234,15 @@ import TechStrip from '../components/TechStrip.astro';
       <div class="flex flex-col items-start gap-5">
         <span class="eyebrow text-action">Contacto</span>
         <h2 class="font-display text-3xl font-bold tracking-tight text-balance lg:text-[38px]">
-          Montemos tu tienda.
+          Descubre qué medir primero.
         </h2>
         <p class="text-inksoft max-w-[50ch] leading-relaxed">
-          Cuéntanos qué vendes y cómo despachas hoy, y te contactamos con una recomendación de
-          plataforma y una propuesta de alcance en menos de 24 horas hábiles.
+          Cuéntanos qué decisiones te cuestan más hoy y te contactamos con una evaluación inicial y
+          una propuesta de alcance en menos de 24 horas hábiles.
         </p>
         <ul class="flex flex-col gap-3">
           <li class="flex items-center gap-3"><Icon name="check" size={20} class="text-action shrink-0" /><span class="font-semibold">Diagnóstico gratuito de 30 minutos</span></li>
-          <li class="flex items-center gap-3"><Icon name="check" size={20} class="text-action shrink-0" /><span class="font-semibold">Sin compromiso</span></li>
+          <li class="flex items-center gap-3"><Icon name="check" size={20} class="text-action shrink-0" /><span class="font-semibold">Sirve aunque hoy trabajes en Excel</span></li>
           <li class="flex items-center gap-3"><Icon name="check" size={20} class="text-action shrink-0" /><span class="font-semibold">Respuesta de un consultor, no de un bot</span></li>
         </ul>
       </div>

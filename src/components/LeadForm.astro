@@ -1,9 +1,9 @@
 ---
 // Formulario de captura. Usa el primer backend configurado (ver .env.example):
-// 1. PUBLIC_N8N_WEBHOOK_URL — webhook de n8n (cuando exista una instancia).
-// 2. PUBLIC_SUPABASE_URL + PUBLIC_SUPABASE_ANON_KEY — inserta en la tabla
+// 1. PUBLIC_N8N_WEBHOOK_URL: webhook de n8n (cuando exista una instancia).
+// 2. PUBLIC_SUPABASE_URL + PUBLIC_SUPABASE_ANON_KEY: inserta en la tabla
 //    public.leads (ver supabase/leads.sql; la anon key solo puede insertar).
-// 3. PUBLIC_WEB3FORMS_KEY — Web3Forms: entrega los leads por correo.
+// 3. PUBLIC_WEB3FORMS_KEY: Web3Forms entrega los leads por correo.
 // Sin ninguno configurado, informa al visitante en lugar de fallar en silencio.
 ---
 
@@ -132,8 +132,8 @@
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({
             access_key: web3formsKey,
-            subject: `Nuevo lead: ${data.nombre} — ImagineLabs`,
-            from_name: 'Web ImagineLabs',
+            subject: `Nuevo lead: ${data.nombre} (AlquimIA)`,
+            from_name: 'Web AlquimIA',
             email: data.correo,
             ...data,
             pagina: location.pathname,

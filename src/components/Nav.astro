@@ -1,13 +1,12 @@
 ---
-import { SITE, NAV_LINKS } from '../config.js';
-import Icon from './Icon.astro';
+import { NAV_LINKS } from '../config.js';
+import Logo from './Logo.astro';
 ---
 
 <header class="border-navline/70 bg-deep/85 sticky top-0 z-50 border-b backdrop-blur">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-    <a href="/" class="flex items-center gap-3 text-white">
-      <Icon name="circuit" size={26} class="text-cyan" />
-      <span class="font-display text-lg font-bold tracking-tight">{SITE.brand}</span>
+    <a href="/" class="flex items-center" aria-label="Inicio">
+      <Logo size="h-[17px]" />
     </a>
     <nav class="hidden items-center gap-8 md:flex" aria-label="Principal">
       {

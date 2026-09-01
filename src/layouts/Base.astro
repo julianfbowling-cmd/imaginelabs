@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../config.js';
+import { SITE, TEAM } from '../config.js';
 import '../styles/global.css';
 
 const { title = SITE.titleDefault, description = SITE.description, path = '/' } = Astro.props;
@@ -17,12 +17,19 @@ const jsonLd = {
       email: SITE.email,
       description: SITE.description,
       address: { '@type': 'PostalAddress', addressCountry: 'CO' },
+      founder: TEAM.map((socio) => ({
+        '@type': 'Person',
+        name: socio.nombre,
+        jobTitle: socio.rol,
+      })),
       areaServed: 'Worldwide',
       knowsAbout: [
         'Desarrollo web',
         'Inteligencia artificial',
         'Automatización empresarial',
         'Ecommerce',
+        'Inteligencia de negocio',
+        'Formación empresarial en inteligencia artificial',
       ],
     },
     {

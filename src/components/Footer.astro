@@ -1,6 +1,6 @@
 ---
 import { SITE, SERVICES } from '../config.js';
-import Icon from './Icon.astro';
+import Logo from './Logo.astro';
 
 const year = new Date().getFullYear();
 ---
@@ -8,9 +8,8 @@ const year = new Date().getFullYear();
 <footer class="bg-deep px-6 pt-16 text-white lg:px-10">
   <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 pb-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
     <div class="flex flex-col items-start gap-4">
-      <a href="/" class="flex items-center gap-3">
-        <Icon name="circuit" size={24} class="text-cyan" />
-        <span class="font-display text-lg font-bold">{SITE.brand}</span>
+      <a href="/" class="flex items-center" aria-label="Inicio">
+        <Logo size="h-[19px]" />
       </a>
       <p class="text-textdim max-w-[34ch] text-sm leading-relaxed">
         Web, IA y automatización para empresas que quieren crecer con resultados medibles.
@@ -28,6 +27,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="flex flex-col gap-3">
       <span class="eyebrow text-textdim">Compañía</span>
+      <a href="/quienes-somos/" class="text-textmid text-sm transition-colors hover:text-white">Quiénes somos</a>
       <a href="/#proceso" class="text-textmid text-sm transition-colors hover:text-white">Cómo trabajamos</a>
       <a href="#contacto" class="text-textmid text-sm transition-colors hover:text-white">Contacto</a>
     </div>

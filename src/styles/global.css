@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* Paleta "Azul profundo" — ver tablero Paleta final en el lienzo de diseño */
+/* Paleta "Azul profundo": ver tablero Paleta final en el lienzo de diseño */
 @theme {
   --color-deep: #0a1236;
   --color-royal: #142878;

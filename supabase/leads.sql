@@ -1,4 +1,4 @@
--- Tabla de leads del formulario de ImagineLabs.
+-- Tabla de leads del formulario de AlquimIA.
 -- Ejecutar en Supabase: Dashboard → SQL Editor → pegar y Run.
 
 create table public.leads (

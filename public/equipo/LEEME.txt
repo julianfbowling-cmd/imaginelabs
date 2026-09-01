@@ -1,0 +1,24 @@
+Fotos del equipo para /quienes-somos/
+
+Por ahora la página va SIN retratos: el héroe muestra el logotipo de
+AlquimIA y las tarjetas de perfil solo llevan nombre y rol.
+
+Cuando tengas las fotos, guárdalas aquí:
+
+  johan.jpg    -> foto de Johan
+  julian.jpg   -> foto de Julián
+
+Formato: JPG (o WEBP), recorte CUADRADO de 800x800 px, menos de 200 KB,
+con la cara centrada y algo de aire arriba. El recorte cuadrado importa:
+se muestran con object-cover, así que una foto vertical se recorta por
+arriba y por abajo.
+
+Para volver a mostrarlas hay que reponer el bloque de imagen en
+src/pages/quienes-somos.astro (dentro de la tarjeta de cada socio):
+
+  <div class="h-24 w-24 shrink-0 overflow-hidden rounded-2xl
+              bg-[linear-gradient(150deg,#0F1D66,#1B32A8)] sm:h-28 sm:w-28">
+    <img src="/equipo/johan.jpg" alt="Foto de Johan, Optimización de
+         procesos en AlquimIA" width="224" height="224" loading="lazy"
+         class="h-full w-full object-cover" />
+  </div>

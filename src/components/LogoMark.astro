@@ -1,0 +1,28 @@
+---
+// Isotipo AlquimIA: las dos letras de la sigla con el mismo salto de peso
+// del logotipo. Para avatares, marcadores y espacios cuadrados.
+// Va en contornos y no en texto con webfont para que el contraste de peso sea
+// exacto desde el primer pintado y sin cargar una familia extra.
+// Generado por scripts/gen-logo.py: no editar a mano.
+const { variant = 'negativo', size = 'h-[28px]', class: className = '' } = Astro.props;
+
+const tone = {
+  negativo: { word: 'fill-white', sigla: 'fill-cyan' },
+  positivo: { word: 'fill-ink', sigla: 'fill-action' },
+  mono: { word: 'fill-current', sigla: 'fill-current' },
+}[variant];
+---
+
+<svg
+  viewBox="0 0 99.8 68.7"
+  role="img"
+  aria-label="AlquimIA"
+  class={`w-auto ${size} ${className}`}
+>
+  <g class={tone.word}>
+    <path transform="translate(-9.50 68.70) scale(0.10000 -0.10000)" d="M95 0V686H159V0Z"/>
+  </g>
+  <g class={tone.sigla}>
+    <path transform="translate(25.90 68.70) scale(0.10000 -0.10000)" d="M8 0 266 687H481L739 0H548L507 119H233L192 0ZM276 253H463L414 398Q410 409 404.5 425.5Q399 442 393.5 460.5Q388 479 383.0 498.0Q378 517 373 531H366Q362 512 354.5 488.0Q347 464 339.5 440.0Q332 416 326 398Z"/>
+  </g>
+</svg>
